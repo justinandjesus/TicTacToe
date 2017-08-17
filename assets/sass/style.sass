@@ -7,7 +7,8 @@ section.main
   display: flex
   justify-content: center
   align-items: center
-  background: url(http://www.powerpointhintergrund.com/uploads/2017/06/notebook-background-blank-squared-notebook-sheet-paper-background--20.jpeg) no-repeat
+  background: url(../img/bg.jpg) no-repeat
+  background-position: 50% 50%
   background-size: cover
   &:before
     content: ""
@@ -15,19 +16,14 @@ section.main
     height: 100%
     width: 100%
     background: #2b2b2b
-    opacity: 0.5
+    opacity: 0.4
   .board
-    // display: flex
-    // flex-direction: column
-    // justify-content: center
     position: relative
     display: grid
     grid-template-columns: 145px 145px 145px
     grid-template-rows: 145px 145px 145px
     height: 100%
     width: 100%
-    // .row1, .row2, .row3
-      // display: flex
     .square
       border: 2px solid #2b2b2b
       height: 145px
@@ -37,6 +33,7 @@ section.main
       justify-content: center
       align-items: center
       cursor: pointer
+      text-shadow: 0px 0px 50px #fff
       &:nth-child(1)
         border-top: 0
         border-left: 0
@@ -57,6 +54,7 @@ section.main
       &:nth-child(9)
         border-right: 0
         border-bottom: 0
+    
   
         
     .overlay, .selectOverlay, .chooseOverlay
@@ -74,6 +72,7 @@ section.main
       opacity: 0
       align-items: center
     .chooseOverlay
+      opacity: 0.9
       z-index: 10
     .selectOverlay
       filter: blur(2px)
