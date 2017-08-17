@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta charset="UTF-8"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+  <section class="main">
+    <div class="cover">
+      <div class="board">
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="chooseOverlay">
+            <h3>How many players?</h3>
+            <div class="one" onclick="hideChoose(); singlePlayer();">1</div>
+            <div class="two" onclick="hideChoose(); doublePlayer();">2</div>
+          </div>
+          <div class="selectOverlay">
+            <h3>Choose your symbol!</h3>
+            <div class="x" onclick="curr='X'; hideSelect();">X</div>
+            <div class="o" onclick="curr='O'; hideSelect();">O</div>
+          </div>
+          <div class="overlay">
+            <h3 id="endMessage"></h3>
+            <a href="" class="btn btn-danger restart">Restart</a>
+          </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

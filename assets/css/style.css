@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+section.main {
+  height: 100vh;
+  padding: 7% 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(http://www.powerpointhintergrund.com/uploads/2017/06/notebook-background-blank-squared-notebook-sheet-paper-background--20.jpeg) no-repeat;
+  background-size: cover;
+}
+section.main:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #2b2b2b;
+  opacity: 0.5;
+}
+section.main .board {
+  position: relative;
+  display: grid;
+  grid-template-columns: 145px 145px 145px;
+  grid-template-rows: 145px 145px 145px;
+  height: 100%;
+  width: 100%;
+}
+section.main .board .square {
+  border: 2px solid #2b2b2b;
+  height: 145px;
+  width: 145px;
+  font-size: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+section.main .board .square:nth-child(1) {
+  border-top: 0;
+  border-left: 0;
+}
+section.main .board .square:nth-child(2) {
+  border-top: 0;
+}
+section.main .board .square:nth-child(3) {
+  border-top: 0;
+  border-right: 0;
+}
+section.main .board .square:nth-child(4) {
+  border-left: 0;
+}
+section.main .board .square:nth-child(6) {
+  border-right: 0;
+}
+section.main .board .square:nth-child(7) {
+  border-left: 0;
+  border-bottom: 0;
+}
+section.main .board .square:nth-child(8) {
+  border-bottom: 0;
+}
+section.main .board .square:nth-child(9) {
+  border-right: 0;
+  border-bottom: 0;
+}
+section.main .board .overlay, section.main .board .selectOverlay, section.main .board .chooseOverlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(2, 2, 2, 0.88);
+  color: #fff;
+}
+section.main .board .overlay {
+  transition: all 0.2s ease-in-out;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  align-items: center;
+}
+section.main .board .chooseOverlay {
+  z-index: 10;
+}
+section.main .board .selectOverlay {
+  filter: blur(2px);
+}
+section.main .board .selectOverlay, section.main .board .chooseOverlay {
+  display: grid;
+  padding: 20%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "message message" "x o";
+  font-size: 30px;
+  align-content: center;
+  grid-row-gap: 30px;
+}
+section.main .board .selectOverlay h3, section.main .board .chooseOverlay h3 {
+  text-align: center;
+  grid-area: message;
+  display: grid;
+  align-content: center;
+}
+section.main .board .selectOverlay .x, section.main .board .selectOverlay .one, section.main .board .chooseOverlay .x, section.main .board .chooseOverlay .one {
+  grid-area: x;
+  margin-right: 10px;
+}
+section.main .board .selectOverlay .o, section.main .board .selectOverlay .two, section.main .board .chooseOverlay .o, section.main .board .chooseOverlay .two {
+  grid-area: o;
+  margin-left: 10px;
+}
+section.main .board .selectOverlay .x, section.main .board .selectOverlay .o, section.main .board .selectOverlay .one, section.main .board .selectOverlay .two, section.main .board .chooseOverlay .x, section.main .board .chooseOverlay .o, section.main .board .chooseOverlay .one, section.main .board .chooseOverlay .two {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  border: 2px solid white;
+  border-radius: 9px;
+  cursor: pointer;
+}
+section.main .board .selectOverlay .x:hover, section.main .board .selectOverlay .o:hover, section.main .board .selectOverlay .one:hover, section.main .board .selectOverlay .two:hover, section.main .board .chooseOverlay .x:hover, section.main .board .chooseOverlay .o:hover, section.main .board .chooseOverlay .one:hover, section.main .board .chooseOverlay .two:hover {
+  background: #fff;
+  color: #2b2b2b;
+}
+section.main .board .restart {
+  width: 100px;
+  cursor: pointer;
+  border-radius: 25px;
+  margin-top: 30px;
+}
+
+/*# sourceMappingURL=style.css.map */
