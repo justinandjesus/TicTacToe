@@ -1,4 +1,9 @@
+$squareDimension: 145px
+
 @import url('https://fonts.googleapis.com/css?family=Raleway')
+\:root 
+  --responsiveSquareDimensions: 85px
+
 body
   font-family: 'Raleway', sans-serif
 section.main
@@ -20,20 +25,27 @@ section.main
   .board
     position: relative
     display: grid
-    grid-template-columns: 145px 145px 145px
-    grid-template-rows: 145px 145px 145px
+    grid-template-columns: repeat(3, $squareDimension)
+    grid-template-rows: repeat(3, $squareDimension)
     height: 100%
     width: 100%
+    @media(max-width:480px)
+      grid-template-columns: repeat(3, var(--responsiveSquareDimensions))
+      grid-template-rows: repeat(3, var(--responsiveSquareDimensions))
     .square
       border: 2px solid #2b2b2b
-      height: 145px
-      width: 145px
+      height: $squareDimension
+      width: $squareDimension
       font-size: 75px
       display: flex
       justify-content: center
       align-items: center
       cursor: pointer
       text-shadow: 0px 0px 50px #fff
+      @media(max-width:480px)
+        height: var(--responsiveSquareDimensions)
+        width: var(--responsiveSquareDimensions)
+        font-size: 50px
       &:nth-child(1)
         border-top: 0
         border-left: 0
@@ -63,14 +75,18 @@ section.main
       width: 100%
       background: rgba(2, 2, 2, 0.88)
       color: #fff
+      border-radius: 10px
       
     .overlay
       transition: all 0.2s ease-in-out
       display: none
+      border-radius: 10px
       flex-direction: column
       justify-content: center
       opacity: 0
       align-items: center
+      #endMessage
+        text-align: center
     .chooseOverlay
       opacity: 0.9
       z-index: 10
