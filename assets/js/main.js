@@ -14,7 +14,7 @@ function hideSelect(){
 }
 
 var singlePlayer=false;
-var boxes=$(".square");
+var boxes=$(".square p");
 var winner='';
 var curr='';
 var player1="X";
@@ -23,7 +23,9 @@ var content=[];
 var comPlay=true;
 var winpatt=[[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
 var over=false;
+var overwriting=false;
 
+console.log(boxes);
 startGame();
 
 function startGame(){
@@ -32,19 +34,23 @@ function startGame(){
         if(e.srcElement.innerHTML===''){
           e.srcElement.innerHTML=curr;
           curr= player1===curr? player2: player1;
+            overwriting=false;
           // console.log("Changed to ", curr);
         }
         else{
-          e.srcElement.setAttribute("class", "square animated shake");
-          setTimeout(function(){ e.srcElement.setAttribute("class", "square");}, 500);
+            overwriting=true;
+            e.srcElement.setAttribute("class", "animated shake");
+            setTimeout(function(){ e.srcElement.setAttribute("class", "");}, 500);
         }
         
-        if(!over)  
-            checkIfGameOver();
+            if(!overwriting){
+               if(!over)  
+                checkIfGameOver();
 
-        if(singlePlayer){
-          if(!over)
-              setTimeout(computerPlay, 600);
+                if(singlePlayer){
+                    if(!over)
+                        setTimeout(computerPlay, 600);
+            }
         }
       }
     }
